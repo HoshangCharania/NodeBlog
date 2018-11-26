@@ -1,0 +1,46 @@
+<% var header = '../header'; %>
+<%- include(header) %>
+        
+<div class="container-fluid mt-3">
+    <div class="jumbotron">
+            <header>
+                    <div class="page-header">
+                        <div class="row mt-6">
+                            <div class="col-sm-6">
+                            <h1>View User:</h1>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                                <a href="/users/edit/<%- username['username'] %>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Edit User</a>
+                        </div>
+                    </div>
+            </header>
+    <div class="row mt-2">
+        <div class="col-sm-6">
+            <h4>Username: </h4>
+        </div>
+        <div class="col-sm-6">
+            <p><%- username["username"] %></p>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-sm-6">
+            <h4>Password: </h4>
+        </div>
+        <div class="col-sm-6">
+            <p><%- username["password"] %></p>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-sm-6">
+            <h4>Access: </h4>
+        </div>
+        <div class="col-sm-6">
+            <p><%- username["access"] %></p>
+        </div>
+    </div>
+    </div>
+</div>
+
+<% var footer = '../footer'; %>
+<%- include(footer) %>

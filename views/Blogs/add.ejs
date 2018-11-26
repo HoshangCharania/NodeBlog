@@ -1,0 +1,56 @@
+<% var header = '../header'; %>
+<%- include(header) %>
+<script src="/javascripts/toDataTable.js"></script>
+  <div class="container-fluid">
+  <div class="jumbotron mt-4">
+      <div class="header">
+          <h2>Create a Blog:</h2>
+        </div>
+    <% if(typeof message != 'undefined'){ %>
+        <div class="alert alert-success alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong><%= message %></strong> 
+        </div>
+    <% } %>
+                <!--
+                        user_id: String,
+                        //category: [String],
+                        title: String,
+                        text: String,
+                        location: String,
+                        date_time: Date,
+                        signature: String,
+                -->
+        <form name="addBlog" action="/blogs/add" method="POST" id="login" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="category">Your User Account</label>
+                    <input type="text" class="form-control" id="user_id" name="user_id" value="<%= username %>" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="category">Title</label>
+                  <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Your Blog</span>
+                </div>
+                    <textarea class="form-control" aria-label="With textarea" id="text" name="text"></textarea>
+                </div>
+                <div class="form-group">
+                        <label for="location">location</label>
+                        <input class="form-control" type="text" id="location" name="location" value="Browser Blocking!" readonly>
+                </div>
+                <div class="form-group">
+                        <label for="date">Date</label>
+                        <input class="form-control" type="datetime" id="date" name="date" readonly>
+                </div>
+                <div class="form-group">
+                        <label for="signature">Signature</label>
+                        <input class="form-control" type="text" id="signature" name="signature">
+                </div>
+                <button type="submit" class="btn btn-primary">Create Blog</button>
+        </form>
+      </div>
+      </div>
+<% var footer = '../footer'; %>
+<%- include(footer) %>

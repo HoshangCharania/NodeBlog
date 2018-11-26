@@ -1,0 +1,51 @@
+<% var header = '../header'; %>
+<%- include(header) %>
+<script src="/javascripts/metaBlog.js"></script>
+<div class="container-fluid">
+      <div class="jumbotron mt-4">
+         <div class="header">
+             <div class="row">
+                 <div class="col-sm-10">
+                    <h2> View Blogs: </h2>
+                 </div>
+                 <div class="col-sm-2">
+                    <a class="btn btn-primary btn-lg active" href="/Blogs/add" role="button">Add Blog</a>
+                 </div>
+             </div>
+         </div>
+         <div class="content mt-2">
+                <table id="example" class="table table-striped table-bordered mt-5" cellspacing="20" style="width:100%">
+                        <thead>
+                                <tr>
+                                  <th class="th-sm">User
+                                    <i class="fa fa-sort float-right" aria-hidden="true"></i>
+                                  </th>
+                                  <th class="th-sm">Title
+                                    <i class="fa fa-sort float-right" aria-hidden="true"></i>
+                                  </th>
+                                  <th class="th-sm">Date
+                                    <i class="fa fa-sort float-right" aria-hidden="true"></i>
+                                  </th>
+                                  <th class="th-sm">Location
+                                    <i class="fa fa-sort float-right" aria-hidden="true"></i>
+                                  </th>
+                                </tr>
+                        </thead>
+                <tbody>
+            <% for (arr_key in records) { %>
+                    <tr>
+                        <td><%= records[arr_key]["user_id"] %></td>
+                        <td><%= records[arr_key]["title"] %></td>
+                        <td><%= records[arr_key]["date_time"] %></td>
+                        <td><%= records[arr_key]["location"] %></td>
+                    </tr>
+            <% } %>
+            
+                </tbody>
+            </table>
+            </div>
+     </div>
+ </div>
+
+<% var footer = '../footer'; %>
+<%- include(footer) %>
